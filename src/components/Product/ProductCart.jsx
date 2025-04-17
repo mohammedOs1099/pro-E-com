@@ -12,16 +12,18 @@ import ConfirmModal from "../ConfirmModal/ConfirmModal ";
 import { useTranslation } from "react-i18next";
 
 export default function ProductCart({ role, product }) {
+  const navigate = useNavigate();
     const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const user = useSelector((stat) => stat.auth?.user);
   const { product_card } = stayle;
-  const navigate = useNavigate();
+
   const [showEditModal, setShowEditModal] = useState(false);
   const { id, title, img, price, cat_prefix, max } = product;
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(deleteProduct(id));
+    navigate("/products")
     toast.success("product deleted successfully");
   };
   const handleEdit = (e) => {
