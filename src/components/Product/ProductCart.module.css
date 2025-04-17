@@ -1,0 +1,15 @@
+.product_card {
+  border: solid 0.02rem transparent;
+ 
+ 
+ 
+ 
+  transition: 0.4s;
+  
+  
+}
+.product_card:hover {
+  border: solid 0.02rem #11f00d;
+
+cursor: pointer;
+}
