@@ -95,8 +95,9 @@ export default function Signup() {
                     touched.role && errors.role ? "is-invalid" : ""
                   }`}
                 >
-                  <option value="customer">{t("auth.customer")}</option>
                   <option value="admin">{t("auth.admin")}</option>
+                  <option value="customer">{t("auth.customer")}</option>
+                 
                 </Field>
                 <ErrorMessage
                   component="div"
