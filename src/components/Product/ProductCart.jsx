@@ -7,7 +7,7 @@ import EditProductModal from "./EditProductModal";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import stayle from "./ProductCart.module.css";
-import { addToCart } from "../../store/cart/cartSlice";
+import { addToCart, removeFromCart } from "../../store/cart/cartSlice";
 import ConfirmModal from "../ConfirmModal/ConfirmModal ";
 import { useTranslation } from "react-i18next";
 
@@ -23,6 +23,7 @@ export default function ProductCart({ role, product }) {
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(deleteProduct(id));
+    dispatch(removeFromCart(id));
     navigate("/products")
     toast.success("product deleted successfully");
   };
