@@ -47,7 +47,7 @@ export default function Signup() {
         <h2 className="text-center mb-4 text-success">{t("auth.register")}</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Formik
-          initialValues={{ username: "", password: "", role: "customer" }}
+          initialValues={{ username: "", password: "", role: "admin" }}
           validationSchema={SignUpSchema}
           onSubmit={(values) => {
             handelSignUp(values);
